@@ -1,0 +1,35 @@
+Termíny:
+18.3. -  plán
+25.3. - repozitář, testy, makefile
+6.4. - aritmetické operace, funkce
+13.4. - GUI, ovládání, profiling
+20.4. - nápověda, manuál, dokumentace
+25.4. - mockup, ladění aplikace, instalátor
+
+29. 4. - odevzdání
+
+před obhajobou - prezentace
+21.5. - hodnocení
+----------------------------------------------------
+Rozdělení úkolů:
+Kontrola dodržování termínů a správnosti - xpejch08
+Repozitář - xpejch08
+Trello(bitbucket) - xbehal02
+Testování - xdohna45
+Makefile - xlenfe00
+Aritmetické operace (+,-,*,/) - xdohna45
+Funkce(!, ^, √...) - xlenfe00
+Tlačítka/displej - xpejch08
+GUI - xpejch08
+Profiling - xbehal02
+Nápověda - xlenfe00
+Manuál - xbehal02
+Mockup - xbehal02
+Instalátor - xdohna45
+Zkompletování dokumentace - xdohna45
+Zkompletování prezentace - xlenfe00
+----------------------------------------------------
+Komunikační kanál: Discord
+Vedoucí: Běhal Tomáš xbehal02
+----------------------------------------------------
+Správa verzi a hosting: Github - přístup bude nastaven pro uživatele ivskontrola
