@@ -1,6 +1,6 @@
 # IVS Project 2
-Calculator
-preview
+Calculator preview
+
 Prostredi
 ---------
 
