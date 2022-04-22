@@ -1,21 +1,19 @@
-# calc_ivs
-projekt do školního předmětu IVS na FIT VUT
+# IVS Project 2
+Calculator
+preview
 Prostredi
 ---------
 
-Ubuntu 64bit
-Windows 64bit
+tbd
 
-Autori
+Authors
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+- xbehal02 Tomáš Běhal
+- xdohna45 Ondřej Dohnal
+- xpejch08 Štěpán Pejchar
 
 Licence
 -------
 
-Tento program je poskytovan...
+tbd
