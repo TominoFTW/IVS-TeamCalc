@@ -1,0 +1,23 @@
+IvsPushButton {
+    margin: 4px;
+    font: bold 25px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+IvsLongButton {
+    margin: 4px;
+    font: bold 25px;
+    height: 100%;
+    width: 100%;
+    
+}
+
+IvsTextBox {
+    margin: 4px;
+    font: bold 25px;
+    height: 100%;
+    width: 100%;
+    text-align: right;
+}
