@@ -57,7 +57,7 @@ class MathLib:
     # @return     factorial of the number
     @staticmethod
     def factorial(n):
-        if type(n) != int or n <0 :
+        if type(n) != int or n < 0 :
             raise ValueError("MathError")
         if n == 0:
             return 1
@@ -65,9 +65,9 @@ class MathLib:
             return n * MathLib.factorial(n - 1)
 
     ##
-    # @brief      Calculates the power of a number
-    # @param      base the base of the power
-    # @param      exponent the exponent of the power
+    # @brief      Calculates power of a number
+    # @param      base base of the power
+    # @param      exponent exponent of the power
     # @exception  ValueError If the exponent is negative nor integer
     # @return     power of the base to the exponent
     @staticmethod
@@ -75,7 +75,7 @@ class MathLib:
         if type(exponent) != int or exponent < 0:
             raise ValueError("MathError")
         else:
-            return round(base ** exponent, 6)
+            return round(base ** exponent, 5)
 
     ##
     # @brief      Calculates the root of a number
@@ -85,10 +85,10 @@ class MathLib:
     # @return     root of base
     @staticmethod
     def root(base, root):
-        if base <= 0:
+        if base < 0 or root == 0:
             raise ValueError("MathError")
         else:
-            return round(base ** round(1/root,6), 6)
+            return round(base ** round(1/root,6), 5)
 
     ##
     # @brief      Calculates the absolute value of a number
