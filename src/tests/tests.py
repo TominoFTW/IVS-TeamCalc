@@ -108,22 +108,6 @@ class LibTestDiv(unittest.TestCase):
             MathLib.div(1, 0)
             MathLib.div(0, 0)
 
-
-class LibTestPower(unittest.TestCase):
-    def setUp(self):
-        self.lib = MathLib()
-
-    def test_pow_positive(self):
-        self.assertEqual(MathLib.power(2, 1), 2)
-        self.assertEqual(MathLib.power(0, 1), 0)
-        self.assertEqual(MathLib.power(2, 0), 1)
-
-    def test_pow_both(self):
-        self.assertEqual(MathLib.power(-2, 2), 4)
-        self.assertEqual(MathLib.power(-2, 3), -8)
-        self.assertEqual(MathLib.power(-1, 1), -1)
-
-
 class LibTestFactorial(unittest.TestCase):
     def setUp(self):
         self.lib = MathLib()
@@ -145,6 +129,20 @@ class LibTestFactorial(unittest.TestCase):
             MathLib.factorial(-31.7)
             MathLib.factorial(-251.432)
 
+class LibTestPower(unittest.TestCase):
+    def setUp(self):
+        self.lib = MathLib()
+
+    def test_pow_positive(self):
+        self.assertEqual(MathLib.power(2, 1), 2)
+        self.assertEqual(MathLib.power(0, 1), 0)
+        self.assertEqual(MathLib.power(2, 0), 1)
+
+    def test_pow_both(self):
+        self.assertEqual(MathLib.power(-2, 2), 4)
+        self.assertEqual(MathLib.power(-2, 3), -8)
+        self.assertEqual(MathLib.power(-1, 1), -1)
+
 
 class LibTestRoot(unittest.TestCase):
     def setUp(self):
@@ -153,22 +151,17 @@ class LibTestRoot(unittest.TestCase):
     def test_root_positive(self):
         self.assertEqual(MathLib.root(1, 2), 1)
         self.assertEqual(MathLib.root(16, 4), 2)
-        self.assertEqual(MathLib.root(125, 3), 5)
-
-    def test_root_negative(self):
-        self.assertEqual(MathLib.root(-125, 3), -5)
-        self.assertEqual(MathLib.root(-32, 5), -2)
-        self.assertEqual(MathLib.root(-27, 3), -3)
+        self.assertEqual(MathLib.root(27, 3), 3)
 
     def test_root_negative_root(self):
         self.assertEqual(MathLib.root(1, -2), 1)
-        self.assertEqual(MathLib.root(2, -2), 0.707107)
+        self.assertEqual(MathLib.root(2, -2), 0.70711)
         self.assertEqual(MathLib.root(125, -3), 0.2)
 
     def test_root_float(self):
-        self.assertEqual(MathLib.root(0.5, 2), 0.707107)
-        self.assertEqual(MathLib.root(2.8, 2), 1.673320)
-        self.assertEqual(MathLib.root(256.253, 2), 16.007904)
+        self.assertEqual(MathLib.root(0.5, 2), 0.70711)
+        self.assertEqual(MathLib.root(2.8, 2), 1.67332)
+        self.assertEqual(MathLib.root(256.253, 2), 16.00790)
 
     def test_root_zero(self):
         self.assertEqual(MathLib.root(0, 2), 0)
