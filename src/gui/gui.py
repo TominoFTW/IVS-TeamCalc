@@ -10,8 +10,8 @@ class MainWindow(QtWidgets.QMainWindow):
         with open("app.qss", "r") as style:
             self.setStyleSheet(style.read())
 
-        self.about = self.menuBar().addMenu(self.tr("&Help"))
-        self.about.addAction(self.tr("about"))
+        self.__help = self.menuBar().addMenu(self.tr("&Help"))
+        self.__about = self.__help.addAction(self.tr("about"))
         self.setWindowTitle("IVS Calc")
         l = IvsWidget()
         self.setFixedSize(l.size())
