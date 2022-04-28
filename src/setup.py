@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
    name='ivscalc',
-   version='1.5',
+   version='1.6',
    description='School project calculator',
    author='4bitnebude',
    author_email='',
@@ -14,7 +14,7 @@ setup(
    },
    package_data={
         # If any package contains *.txt or *.rst files, include them:
-        '': ['*.qss'],
+        '': ['*.qss', '*.pdf'],
    },
    python_requires='>=3.9',
    license="GPLv3",
