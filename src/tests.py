@@ -150,30 +150,30 @@ class LibTestRoot(unittest.TestCase):
         self.lib = MathLib()
 
     def test_root_positive(self):
-        self.assertEqual(MathLib.root(1, 2), 1)
-        self.assertEqual(MathLib.root(16, 4), 2)
-        self.assertEqual(MathLib.root(27, 3), 3)
+        self.assertEqual(MathLib.root(2, 1), 1)
+        self.assertEqual(MathLib.root(4, 16), 2)
+        self.assertEqual(MathLib.root(3, 27), 3)
 
     def test_root_negative_root(self):
-        self.assertEqual(MathLib.root(1, -2), 1)
-        self.assertEqual(MathLib.root(2, -2), 0.70711)
-        self.assertEqual(MathLib.root(125, -3), 0.2)
+        self.assertEqual(MathLib.root(-2, 1), 1)
+        self.assertEqual(MathLib.root(-2, 2), 0.70711)
+        self.assertEqual(MathLib.root(-3, 125), 0.2)
 
     def test_root_float(self):
-        self.assertEqual(MathLib.root(0.5, 2), 0.70711)
-        self.assertEqual(MathLib.root(2.8, 2), 1.67332)
-        self.assertEqual(MathLib.root(256.253, 2), 16.00790)
+        self.assertEqual(MathLib.root(2, 0.5), 0.70711)
+        self.assertEqual(MathLib.root(2, 2.8), 1.67332)
+        self.assertEqual(MathLib.root(2, 256.253), 16.00790)
 
     def test_root_zero(self):
-        self.assertEqual(MathLib.root(0, 2), 0)
+        self.assertEqual(MathLib.root(2, 0), 0)
 
     def test_root_exception(self):
         with self.assertRaises(ValueError):
-            MathLib.root(5, 0)
-            MathLib.root(-5, 2)
-            MathLib.root(-353, 2)
-            MathLib.root(-31.7, 2)
-            MathLib.root(-251.432, 4)
+            MathLib.root(0, 5)
+            MathLib.root(2, -5)
+            MathLib.root(2, -353)
+            MathLib.root(2, -31.7)
+            MathLib.root(4, 251.432)
 
 
 class LibTestModulo(unittest.TestCase):
