@@ -4,26 +4,28 @@ from ivsmath.parser import infixToPrefix
 from collections import deque
 from ivsmath.mathlib import MathLib
 
+
 def calculate(x):
     token = x.popleft()
     if token == "+":
         return f"MathLib.add({calculate(x)}, {calculate(x)})"
-    elif token == '-':
+    elif token == "-":
         return f"MathLib.sub({calculate(x)}, {calculate(x)})"
-    elif token == '*':
+    elif token == "*":
         return f"MathLib.mul({calculate(x)}, {calculate(x)})"
-    elif token == '/':
+    elif token == "/":
         return f"MathLib.div({calculate(x)}, {calculate(x)})"
-    elif token == '!':
+    elif token == "!":
         return f"MathLib.factorial({calculate(x)}, {calculate(x)})"
-    elif token == '^':
+    elif token == "^":
         return f"MathLib.power({calculate(x)}, {calculate(x)})"
-    elif token == '_':
+    elif token == "_":
         return f"MathLib.root({calculate(x)}, {calculate(x)})"
-    elif token == '%':
+    elif token == "%":
         return f"MathLib.mod({calculate(x)}, {calculate(x)})"
     else:
         return f"{token}"
+
 
 def click_process(id, text):
     if id in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
@@ -83,14 +85,14 @@ def click_process(id, text):
             else:
                 IvsWidget.buffer.pop()
     elif id == 21:
-        # try:
+        try:
             sum = eval(calculate(deque(infixToPrefix(IvsWidget.buffer))))
             print(sum)
             IvsWidget.textBox.value = str(sum)
             IvsWidget.buffer = [str(sum)]
-        # except Exception as e:
-        #     IvsWidget.buffer = ["0"]
-        #     IvsWidget.textBox.value = "Syntax Error"
+        except Exception as e:
+            IvsWidget.buffer = ["0"]
+            IvsWidget.textBox.value = "Syntax Error"
 
 
 class IvsButton(QPushButton):
@@ -153,7 +155,7 @@ class IvsWidget(QWidget):
         self.__layout.addWidget(IvsPushButton("7", 7), 1, 0)
         self.__layout.addWidget(IvsPushButton("8", 8), 1, 1)
         self.__layout.addWidget(IvsPushButton("9", 9), 1, 2)
-        self.__layout.addWidget(IvsPushButton(",", 10), 4, 2)
+        self.__layout.addWidget(IvsPushButton(".", 10), 4, 2)
         self.__layout.addItem(QSpacerItem(50, 100), 0, 3)
         self.__layout.addWidget(IvsPushButton("AC", 11), 0, 4)
         self.__layout.addWidget(IvsPushButton("C", 12), 0, 5)

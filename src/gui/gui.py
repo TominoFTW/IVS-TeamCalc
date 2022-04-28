@@ -51,6 +51,8 @@ class MainWindow(QtWidgets.QMainWindow):
             click_process(17, "√")
         elif event.key() == Qt.Key_AsciiCircum:
             click_process(18, "^")
+        elif event.key() == Qt.Key_Period:
+            click_process(10, ".")
         elif event.key() == Qt.Key_Exclam:
             click_process(20, "!")
         elif event.key() == Qt.Key_Escape:

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #import cProfile
-from MathLib import MathLib
+from ivsmath.mathlib import MathLib
 import random
 
 
