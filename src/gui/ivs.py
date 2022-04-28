@@ -101,7 +101,6 @@ def click_process(id, text):
     elif id == 21:
         try:
             sum = eval(calculate(deque(infixToPrefix(IvsWidget.buffer))))
-            print(sum)
             IvsWidget.textBox.value = str(sum)
             IvsWidget.buffer = [str(sum)]
         except Exception as e:
