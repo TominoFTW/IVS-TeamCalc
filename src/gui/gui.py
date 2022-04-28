@@ -5,6 +5,7 @@
 # @package gui
 # Definition of base window
 
+import subprocess
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt, pyqtSlot
 from gui.ivs import IvsWidget, click_process
@@ -20,11 +21,16 @@ class MainWindow(QtWidgets.QMainWindow):
             self.setStyleSheet(style.read())
         self.__help = self.menuBar().addMenu(self.tr("&Help"))
         self.__about = self.__help.addAction(self.tr("about"))
+        self.__about.clicked.connect(help)
         self.setWindowTitle("IVS Calc")
         l = IvsWidget()
         self.setFixedSize(l.size())
         self.setCentralWidget(l)
         self.show()
+        
+    @pyqtSlot
+    def help():
+        subprocess.call(["xdg-open", f"{pathlib.Path(__file__).parent.resolve()}/napoveda.pdf"])
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_0:
