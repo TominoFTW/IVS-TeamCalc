@@ -18,5 +18,5 @@ setup(
    },
    python_requires='>=3.9',
    license="GPLv3",
-   install_requires=['wheel', 'PyQt5'], #external packages as dependencies
+   install_requires=['wheel', 'pyqt5'], #external packages as dependencies
 )
