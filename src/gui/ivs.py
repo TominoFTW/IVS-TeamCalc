@@ -2,6 +2,27 @@ from PyQt5.QtWidgets import QWidget, QPushButton, QGridLayout, QSpacerItem, QLin
 from PyQt5.QtCore import Qt, pyqtSlot
 from ivsmath.parser import infixToPrefix
 
+def calculate(x):
+    if len(x):
+        print(f"X: {x}, X0: {x[0]}, X1: {x[1:]}, X2: {x[2:]}")
+        if x[0] == "+":
+            return f"MathLib.add({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '-':
+            return f"MathLib.sub({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '*':
+            return f"MathLib.mul({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '/':
+            return f"MathLib.div({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '!':
+            return f"MathLib.factorial({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '^':
+            return f"MathLib.power({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '_':
+            return f"MathLib.root({calculate(x[1:1])}, {calculate(x[2:])})"
+        elif x[0] == '%':
+            return f"MathLib.mod({calculate(x[1:1])}, {calculate(x[2:])})"
+        else:
+            return f"{x[0]}"
 
 def click_process(id, text):
     if id in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
@@ -62,7 +83,7 @@ def click_process(id, text):
                 IvsWidget.buffer.pop()
     elif id == 21:
         try:
-            print(infixToPrefix(IvsWidget.buffer))
+            print(calculate(infixToPrefix(IvsWidget.buffer)))
         except Exception as e:
             IvsWidget.buffer = ["0"]
             IvsWidget.textBox.value = "Syntax Error"
