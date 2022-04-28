@@ -6,6 +6,8 @@ from ivsmath.parser import infixToPrefix
 def click_process(id, text):
     if id in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
         IvsWidget.textBox.value += text
+        if not len(IvsWidget.buffer):
+            IvsWidget.buffer = ["0"]
         if IvsWidget.buffer[-1] not in (
             "-",
             "+",

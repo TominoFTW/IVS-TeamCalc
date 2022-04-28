@@ -56,7 +56,7 @@ class MathLib:
     # @exception  ValueError If the number is negative nor integer
     # @return     factorial of the number
     @staticmethod
-    def factorial(n, _):
+    def factorial(n, _=0):
         if type(n) != int or n < 0:
             raise ValueError("MathError")
         if n == 0:
