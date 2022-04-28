@@ -96,7 +96,6 @@ class MathLib:
     # @param      b number divisor
     # @return     modulo of the number
     @staticmethod
-    @staticmethod
     def mod(a, b):
         if b == 0:
             raise ValueError("Modulo by zero")
