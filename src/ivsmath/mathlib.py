@@ -44,25 +44,25 @@ class MathLib:
     # @return     The quotient of a and b
     @staticmethod
     def div(a, b):
-        if b == 0:
+        if (b == 0):
             raise ValueError("MathError")
         if a % b == 0:
             return a / b
         return float(a) / b
 
     ##
-    # @brief      Calculates the factorial of a number
+    # @brief      Calculates the factorial of a number  
     # @param      n number to calculate factorial of
     # @exception  ValueError If the number is negative nor integer
     # @return     factorial of the number
     @staticmethod
     def factorial(n, _=0):
-        if type(n) != int or n < 0:
+        if type(n) != int or n < 0 :
             raise ValueError("MathError")
         if n == 0:
             return 1
         else:
-            return n * MathLib.factorial(n - 1, 0)
+            return n * MathLib.factorial(n - 1)
 
     ##
     # @brief      Calculates power of a number
@@ -75,7 +75,7 @@ class MathLib:
         if type(exponent) != int or exponent < 0:
             raise ValueError("MathError")
         else:
-            return round(base**exponent, 5)
+            return round(base ** exponent, 5)
 
     ##
     # @brief      Calculates the root of a number
@@ -88,18 +88,7 @@ class MathLib:
         if base < 0 or root == 0:
             raise ValueError("MathError")
         else:
-            return round(base ** round(1 / root, 6), 5)
-
-    ##
-    # @brief      Calculates the absolute value of a number
-    # @param      n number to calculate the absolute value of
-    # @return     absolute value of the number
-    @staticmethod
-    def abs(n):
-        if n < 0:
-            return -n
-        else:
-            return n
+            return round(base ** round(1/root,6), 5)
 
     ##
     # @brief      Calculates the modulo of a number
@@ -107,5 +96,8 @@ class MathLib:
     # @param      b number divisor
     # @return     modulo of the number
     @staticmethod
+    @staticmethod
     def mod(a, b):
+        if b == 0:
+            raise ValueError("Modulo by zero")
         return MathLib.sub(a, MathLib.mul(a // b, b))
