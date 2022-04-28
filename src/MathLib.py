@@ -95,8 +95,5 @@ class MathLib:
     # @param      n number to calculate the absolute value of
     # @return     absolute value of the number
     @staticmethod
-    def abs(n):
-        if n < 0:
-            return -n
-        else:
-            return n
+    def mod(a, b):
+        return a % b

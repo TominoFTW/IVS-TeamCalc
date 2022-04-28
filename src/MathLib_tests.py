@@ -176,33 +176,26 @@ class LibTestRoot(unittest.TestCase):
             MathLib.root(-251.432, 4)
 
 
-class LibTestAbsolute(unittest.TestCase):
+class LibTestModulo(unittest.TestCase):
     def setUp(self):
         self.lib = MathLib()
 
+    def test_mod_positive(self):
+        self.assertEqual(MathLib.mod(10, 3), 1)
+        self.assertEqual(MathLib.mod(20, 7), 6)
+        self.assertEqual(MathLib.mod(27, 9), 0)
 
-    def test_absolute_positive(self):
-        self.assertEqual(MathLib.abs(1), 1)
-        self.assertEqual(MathLib.abs(25), 25)
-        self.assertEqual(MathLib.abs(27), 27)
+    def test_mod_negative(self):
+        self.assertEqual(MathLib.mod(-1, 1), 0)
+        self.assertEqual(MathLib.mod(-26, 5), -1)
+        self.assertEqual(MathLib.mod(-256, 250), -6)
 
-    def test_absolute_positive_float(self):
-        self.assertEqual(MathLib.abs(2.5), 2.5)
-        self.assertEqual(MathLib.abs(25.2563), 25.2563)
-        self.assertEqual(MathLib.abs(265.17), 265.17)
-
-    def test_absolute_negative_float(self):
-        self.assertEqual(MathLib.abs(-2.5), 2.5)
-        self.assertEqual(MathLib.abs(-25.2563), 25.2563)
-        self.assertEqual(MathLib.abs(-265.17), 265.17)
-
-    def test_absolute_negative(self):
-        self.assertEqual(MathLib.abs(-1), 1)
-        self.assertEqual(MathLib.abs(25), 25)
-        self.assertEqual(MathLib.abs(-256), 256)
-
-    def test_absolute_zero(self):
-        self.assertEqual(MathLib.abs(0), 0)
+    def test_mod_exception(self):
+        with self.assertRaises(ValueError):
+            MathLib.mod(5, 0)
+            MathLib.mod(-5, 0)
+            MathLib.mod(-5.45, 2)
+            MathLib.mod(5.45, 2)
 
 
 if __name__ == '__main__':
