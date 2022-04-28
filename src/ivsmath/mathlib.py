@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 ##
-# @package MathLib
+# @package ivsmath
 # Mathematical library for calculator.
 
 ##

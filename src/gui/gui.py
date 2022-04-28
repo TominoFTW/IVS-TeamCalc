@@ -1,9 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+##
+# @package gui
+# Definition of base window
+
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt, pyqtSlot
 from gui.ivs import IvsWidget, click_process
 import pathlib
 
-
+##
+# @brief MainWindow class defining keyboard events
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()

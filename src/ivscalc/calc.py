@@ -1,4 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+##
+# @package ivscalc
+# Main ivscalc module.
+
+##
+# @brief Main ivscalc module.
 
 import sys
 from PyQt5 import QtWidgets, QtGui

@@ -4,7 +4,7 @@ Calculator preview
 Prostredi
 ---------
 
-tbd
+Ubuntu 64bit
 
 Authors
 ------
@@ -16,4 +16,4 @@ Authors
 Licence
 -------
 
-tbd
+Tento program je poskytovan pod licenci GNU/GPLv3 viz [LICESE](LICENSE)

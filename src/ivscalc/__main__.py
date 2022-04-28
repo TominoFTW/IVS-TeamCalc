@@ -1,5 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+##
+# @package ivscalc
+# Main ivscalc module.
+
+##
+# @brief Main ivscalc module.
 import re
 import sys
 from ivscalc.calc import main
