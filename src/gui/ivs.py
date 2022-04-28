@@ -7,7 +7,7 @@ def click_process(id, text):
     if id in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
         IvsWidget.textBox.value += text
         if not len(IvsWidget.buffer):
-            IvsWidget.buffer = ["0"]
+            IvsWidget.buffer = [""]
         if IvsWidget.buffer[-1] not in (
             "-",
             "+",
@@ -49,8 +49,8 @@ def click_process(id, text):
         IvsWidget.textBox.value += text
         IvsWidget.buffer[-1] += "."
     elif id == 11:
-        IvsWidget.textBox.value = "0"
-        IvsWidget.buffer = ["0"]
+        IvsWidget.textBox.value = ""
+        IvsWidget.buffer = [""]
     elif id == 12:
         IvsWidget.textBox.backspace()
         if len(IvsWidget.buffer):
@@ -109,7 +109,7 @@ class IvsTextBox(QLineEdit):
 class IvsWidget(QWidget):
 
     textBox = None
-    buffer = ["0"]
+    buffer = [""]
 
     def __init__(self) -> None:
         super().__init__()
