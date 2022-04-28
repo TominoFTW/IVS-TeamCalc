@@ -44,25 +44,25 @@ class MathLib:
     # @return     The quotient of a and b
     @staticmethod
     def div(a, b):
-        if (b == 0):
+        if b == 0:
             raise ValueError("MathError")
         if a % b == 0:
             return a / b
         return float(a) / b
 
     ##
-    # @brief      Calculates the factorial of a number  
+    # @brief      Calculates the factorial of a number
     # @param      n number to calculate factorial of
     # @exception  ValueError If the number is negative nor integer
     # @return     factorial of the number
     @staticmethod
-    def factorial(n):
-        if type(n) != int or n < 0 :
+    def factorial(n, _):
+        if type(n) != int or n < 0:
             raise ValueError("MathError")
         if n == 0:
             return 1
         else:
-            return n * MathLib.factorial(n - 1)
+            return n * MathLib.factorial(n - 1, 0)
 
     ##
     # @brief      Calculates power of a number
@@ -75,7 +75,7 @@ class MathLib:
         if type(exponent) != int or exponent < 0:
             raise ValueError("MathError")
         else:
-            return round(base ** exponent, 5)
+            return round(base**exponent, 5)
 
     ##
     # @brief      Calculates the root of a number
@@ -88,7 +88,7 @@ class MathLib:
         if base < 0 or root == 0:
             raise ValueError("MathError")
         else:
-            return round(base ** round(1/root,6), 5)
+            return round(base ** round(1 / root, 6), 5)
 
     ##
     # @brief      Calculates the absolute value of a number
@@ -101,7 +101,6 @@ class MathLib:
         else:
             return n
 
-
     ##
     # @brief      Calculates the modulo of a number
     # @param      a number dividend
@@ -109,4 +108,4 @@ class MathLib:
     # @return     modulo of the number
     @staticmethod
     def mod(a, b):
-        return MathLib.sub(a, MathLib.mul(a//b, b))
+        return MathLib.sub(a, MathLib.mul(a // b, b))

@@ -1,7 +1,12 @@
+def flatten(x):
+    if isinstance(x, list):
+        return [a for i in x for a in flatten(i)]
+    else:
+        return [x]
+
+
 def isOperator(c):
-    return (
-        c in ("-", "+", "*", "/", "%", "^", "!", "_")
-    )
+    return c in ("-", "+", "*", "/", "%", "^", "!", "_")
 
 
 def getPriority(C):
@@ -33,12 +38,12 @@ def infixToPrefix(infix):
                 operands.pop()
                 op = operators[-1]
                 operators.pop()
-                tmp = op + op2 + op1
+                tmp = [op, op2, op1]
                 operands.append(tmp)
             operators.pop()
         elif not isOperator(infix[i]):
             operands.append(infix[i] + "")
-            
+
         else:
             while len(operators) != 0 and getPriority(infix[i]) <= getPriority(
                 operators[-1]
@@ -52,29 +57,22 @@ def infixToPrefix(infix):
                 op = operators[-1]
                 operators.pop()
 
-                tmp = op + op2 + op1
+                tmp = [op, op2, op1]
                 operands.append(tmp)
             operators.append(infix[i])
 
-    print('\n',operators, '\n')
-    print('\n', operands, '\n')
     while len(operators) != 0:
         op1 = ""
         op2 = ""
         op1 = operands[-1]
         operands.pop()
-        
+
         op2 = operands[-1]
         operands.pop()
 
         op = operators[-1]
         operators.pop()
 
-        tmp = op + op2 + op1
+        tmp = [op, op2, op1]
         operands.append(tmp)
-    return operands[-1]
-
-
-while 1:
-    s = input("Infix Expression : ")
-    print("Prefix Expression : ", infixToPrefix(s))
+    return flatten(operands[-1])

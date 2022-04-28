@@ -9,7 +9,7 @@ IvsPushButton {
 IvsLongButton {
     margin: 4px;
     font: bold 25px;
-    height: 100%;
+    height: 200%;
     width: 100%;
     
 }

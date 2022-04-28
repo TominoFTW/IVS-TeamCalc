@@ -1,13 +1,14 @@
-from PyQt5 import QtWidgets, QtGui
-import sys
-from ivs import IvsWidget
+from PyQt5 import QtWidgets
+from gui.ivs import IvsWidget
+import pathlib
+
 
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
-        with open("app.qss", "r") as style:
+        with open(f"{pathlib.Path(__file__).parent.resolve()}/app.qss", "r") as style:
             self.setStyleSheet(style.read())
 
         self.__help = self.menuBar().addMenu(self.tr("&Help"))
@@ -17,10 +18,3 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setFixedSize(l.size())
         self.setCentralWidget(l)
         self.show()
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QtGui.QIcon("hand.ico"))
-    w = MainWindow()
-    app.exec()
