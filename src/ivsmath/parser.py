@@ -1,3 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+##
+# @package ivsmath
+# @brief Mathematical expression parser
+# Mathematical library for calculator.
+
+
+##
+# @brief      Merges sublists into one list
+# @param      x list to be flattened
+# @return     Flattened list
 def flatten(x):
     if isinstance(x, list):
         return [a for i in x for a in flatten(i)]
@@ -5,10 +18,18 @@ def flatten(x):
         return [x]
 
 
+##
+# @brief      Check if argument is operand
+# @param      c character to be checked
+# @return     True if c is operand
 def isOperator(c):
     return c in ("-", "+", "*", "/", "%", "^", "!", "_")
 
 
+##
+# @brief      Get priority of operand
+# @param      C operand
+# @return     Priority of operand
 def getPriority(C):
     if C == "-" or C == "+":
         return 1
@@ -21,6 +42,10 @@ def getPriority(C):
     return 0
 
 
+##
+# @brief      Converts infix expression to prefix
+# @param      infix expression
+# @return     Prefix equivalent of infix expression
 def infixToPrefix(infix):
     operators = []
     operands = []
