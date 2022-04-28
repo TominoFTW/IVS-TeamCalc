@@ -88,7 +88,7 @@ class MathLib:
         if base < 0 or root == 0:
             raise ValueError("MathError")
         else:
-            return round(base ** round(1/root,6), 5)
+            return round(root ** round(1/base,6), 5)
 
     ##
     # @brief      Calculates the modulo of a number
