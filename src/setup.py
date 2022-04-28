@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
    name='ivscalc',
-   version='1.6',
+   version='1.7',
    description='School project calculator',
    author='4bitnebude',
    author_email='',
