@@ -1,0 +1,9 @@
+﻿Skutečnost práce
+Na začátku projektu jsme byli přihlášeni do týmu čtyři. Asi po týdnu se však jeden z našich členů odhlásil, a proto jsme si zbylou práci museli rozdělit mezi nás tři. Dodržování termínů neprobíhalo tak jak jsme si stanovili, a proto jsme se shodli, že by bylo vhodné neřešit projekt pouze přes discord, ale sejít se osobně. Na schůzce jsme si ujasnili, co je potřeba dodělat a opět jsme si přerozdělili jednotlivé body.
+
+
+shrnutí:
+1. Rozdělení práce jako v plánu úplně dodržováno nebylo, protože jsme si museli dvakrát práci přerozdělovat, dále jsme si díky dobré komunikaci vypomáhali s různými body, a i proto nebyla práce na daných bodech samostatná jako v plánu.
+2. TDD nebylo striktně dodrženo, jelikož část testů se implementovaly až po napsání matematických funkcí. Některé funkce byly testovány za běhu při implementaci
+3. Deadliny jsme nedodržovali tak jak bylo stanoveno, jelikož původní plán byl vytvořen pro osoby, ale ve výsledku na projektu pracovali pouze tři. Časová náročnost projektu proto byla na osobu větší než se očekávalo. 
+4. Trello, které bylo určeno pro plánování práce, jsme nakonec nevyužili kvůli přerozdělování úkolů. Veškeré plánování jsme prováděli osobně, popřípade na discordu.
