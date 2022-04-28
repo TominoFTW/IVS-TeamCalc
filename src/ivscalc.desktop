@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.9
+Type=Application
+Terminal=false
+Exec=/usr/bin/ivscalc
+Name=IvsCalc
+Comment=Ivs Calculator

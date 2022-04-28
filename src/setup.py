@@ -1,22 +1,25 @@
 from setuptools import setup, find_packages
 
 setup(
-   name='ivscalc',
-   version='1.8',
-   description='School project calculator',
-   author='4bitnebude',
-   author_email='',
-   packages=find_packages(),  #same as name
-   entry_points={
-    'console_scripts': [
-        'ivscalc = ivscalc.calc:main',
-    ],
-   },
-   package_data={
+    name="ivscalc",
+    version="1.9",
+    description="School project calculator",
+    author="4bitnebude",
+    author_email="",
+    packages=find_packages(),  # same as name
+    entry_points={
+        "console_scripts": [
+            "ivscalc = ivscalc.calc:main",
+        ],
+    },
+    package_data={
         # If any package contains *.txt or *.rst files, include them:
-        '': ['*.qss', '*.pdf'],
-   },
-   python_requires='>=3.9',
-   license="GPLv3",
-   install_requires=['wheel', 'pyqt5'], #external packages as dependencies
+        "": ["*.qss", "*.pdf"],
+    },
+    data_files=[
+        ("share/applications", ["ivscalc.desktop"]),
+    ],
+    python_requires=">=3.9",
+    license="GPLv3",
+    install_requires=["wheel", "pyqt5"],  # external packages as dependencies
 )
