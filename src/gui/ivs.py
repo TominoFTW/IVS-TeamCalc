@@ -103,6 +103,7 @@ class IvsTextBox(QLineEdit):
         super().__init__(*args, **kwargs)
         self.setReadOnly(True)
         self.setAlignment(Qt.AlignRight)
+        self.setPlaceholderText("0")
 
 
 class IvsWidget(QWidget):
@@ -112,7 +113,7 @@ class IvsWidget(QWidget):
 
     def __init__(self) -> None:
         super().__init__()
-        self.__textBox = IvsTextBox("0")
+        self.__textBox = IvsTextBox()
         IvsWidget.textBox = self.__textBox
         self.setFocusPolicy(Qt.StrongFocus)
         self.__layout = QGridLayout()
