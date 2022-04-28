@@ -1,4 +1,6 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+Hodnocení:
+
+xdohna45 150 (GUI, makefile, instalátor, matematické operace)
+xbehal02 125 (matematické operace, dokumentace, profiling )
+xpejch08 125 (testování, nápověda, mockup)
+xlenfe00 0 (nic)
