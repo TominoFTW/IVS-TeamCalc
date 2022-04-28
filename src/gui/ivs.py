@@ -3,6 +3,69 @@ from PyQt5.QtCore import Qt, pyqtSlot
 from ivsmath.parser import infixToPrefix
 
 
+def click_process(id, text):
+    if id in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
+        IvsWidget.textBox.value += text
+        if IvsWidget.buffer[-1] not in (
+            "-",
+            "+",
+            "*",
+            "/",
+            "%",
+            "^",
+            "!0",
+            "_",
+            "(",
+            ")",
+        ):
+            IvsWidget.buffer[-1] += text
+        else:
+            IvsWidget.buffer.append(text)
+    elif id in (13, 14, 22, 23):
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append(text)
+    elif id == 15:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append("*")
+    elif id == 16:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append("/")
+    elif id == 17:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append("_")
+    elif id == 18:
+        IvsWidget.textBox.value += "^"
+        IvsWidget.buffer.append("^")
+    elif id == 19:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append("%")
+    elif id == 20:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer.append("!")
+        IvsWidget.buffer.append("0")
+    elif id == 10:
+        IvsWidget.textBox.value += text
+        IvsWidget.buffer[-1] += "."
+    elif id == 11:
+        IvsWidget.textBox.value = "0"
+        IvsWidget.buffer = ["0"]
+    elif id == 12:
+        IvsWidget.textBox.backspace()
+        if len(IvsWidget.buffer):
+            if IvsWidget.buffer[-1] not in ("-", "+", "*", "/", "%", "^", "!0", "_"):
+                IvsWidget.buffer[-1] = IvsWidget.buffer[-1][:-1]
+                if not len(IvsWidget.buffer[-1]):
+                    IvsWidget.buffer.pop()
+            else:
+                IvsWidget.buffer.pop()
+    elif id == 21:
+        try:
+            print(infixToPrefix(IvsWidget.buffer))
+        except Exception as e:
+            IvsWidget.buffer = ["0"]
+            IvsWidget.textBox.value = "Syntax Error"
+
+
 class IvsButton(QPushButton):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(args[0], **kwargs)
@@ -12,56 +75,7 @@ class IvsButton(QPushButton):
 
     @pyqtSlot()
     def on_click(self, *args, **kwargs):
-        self.__click_process(self.__id, self.__text)
-
-    def __click_process(self, id, text):
-        if id in (0,1,2,3,4,5,6,7,8,9):
-            IvsWidget.textBox.value += text
-            if IvsWidget.buffer[-1] not in ("-", "+", "*", "/", "%", "^", "!0", "_", "(", ")"):
-                IvsWidget.buffer[-1] += text
-            else:
-                IvsWidget.buffer.append(text)
-        elif id in (13,14,22,23):
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append(text)
-        elif id==15:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append('*')
-        elif id==16:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append('/')
-        elif id==17:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append('_')
-        elif id==18:
-            IvsWidget.textBox.value += "^"
-            IvsWidget.buffer.append('^')
-        elif id==19:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append('%')
-        elif id==20:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer.append('!')
-            IvsWidget.buffer.append('0')
-        elif id==10:
-            IvsWidget.textBox.value += text
-            IvsWidget.buffer[-1] += '.'
-        elif id==11:
-            IvsWidget.textBox.value = '0'
-            IvsWidget.buffer = ["0"]
-        elif id==12:
-            IvsWidget.textBox.backspace()
-            if IvsWidget.buffer[-1] not in ("-", "+", "*", "/", "%", "^", "!0", "_"):
-                IvsWidget.buffer[-1] = IvsWidget.buffer[-1][:-1]
-            else:
-                IvsWidget.buffer.pop()
-        elif id==21:
-            try:
-                print(infixToPrefix(IvsWidget.buffer))
-            except Exception as e:
-                IvsWidget.buffer = ["0"]
-                IvsWidget.textBox.value = "Syntax Error"
-            
+        click_process(self.__id, self.__text)
 
 
 class IvsPushButton(IvsButton):
@@ -98,6 +112,7 @@ class IvsWidget(QWidget):
         super().__init__()
         self.__textBox = IvsTextBox("0")
         IvsWidget.textBox = self.__textBox
+        self.setFocusPolicy(Qt.StrongFocus)
         self.__layout = QGridLayout()
         self.__layout.addWidget(self.__textBox, 0, 0, 1, 3)
         self.__layout.addWidget(IvsLongButton("0", 0), 4, 0, 1, 2)
