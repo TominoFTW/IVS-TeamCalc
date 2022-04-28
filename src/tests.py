@@ -2,7 +2,7 @@ import unittest
 from ivsmath.mathlib import MathLib
 
 # run tests with:
-# python3 -m MathLib_tests
+# python3 -m tests
 
 
 class LibTestAdd(unittest.TestCase):
