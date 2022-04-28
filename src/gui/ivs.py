@@ -105,7 +105,7 @@ def click_process(id, text):
             IvsWidget.textBox.value = str(sum)
             IvsWidget.buffer = [str(sum)]
         except Exception as e:
-            IvsWidget.buffer = ["0"]
+            IvsWidget.buffer = [""]
             IvsWidget.textBox.value = "Syntax Error"
 
 
