@@ -84,19 +84,20 @@ class MathLib:
     # @exception  ValueError if the base is negative
     # @return     root of base
     @staticmethod
-    def root(base, root):
+    def root(root, base):
         if base < 0 or root == 0:
             raise ValueError("MathError")
         else:
-            return round(root ** round(1/base,6), 5)
+            return round(base ** round(1/root,6), 5)
 
     ##
     # @brief      Calculates the modulo of a number
     # @param      a number dividend
     # @param      b number divisor
+    # @exception  ValueError If b is 0
     # @return     modulo of the number
     @staticmethod
     def mod(a, b):
         if b == 0:
-            raise ValueError("Modulo by zero")
+            raise ValueError("MathError")
         return MathLib.sub(a, MathLib.mul(a // b, b))
