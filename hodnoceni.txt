@@ -1,4 +1,4 @@
 xdohna45 150 (GUI, makefile, instalátor, matematické operace)
-xbehal02 125 (matematické operace, dokumentace, profiling )
+xbehal02 125 (matematické operace, dokumentace, profiling)
 xpejch08 125 (testování, nápověda, mockup)
 xlenfe00 0 (nic)
