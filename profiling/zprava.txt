@@ -1,0 +1,11 @@
+Profiling zprava
+----------------
+
+V prilozenych souborech vidime vypisy jednotlivych profilingu.
+Je patrne ze nejvicekrat je pouzito a to prevazne kvuli vypoctu prumeru,
+ktery byl zavolan pri kazde iteraci pred vypoctem celkove sumy citatele.
+
+Zrychleni by se dosahlo, pokud by se vypocital prumer hodnot na vstupu ihned pote,
+co by program obdrzel vsechny vstupni hodnoty. Pote by se pouze predaval do funkce.
+
+Dale zefektivnit vypocet, protoze s poctem hodnot na vstupu nam i roste pocet volani funkce add.
