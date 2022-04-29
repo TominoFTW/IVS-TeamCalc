@@ -173,7 +173,6 @@ class LibTestRoot(unittest.TestCase):
             MathLib.root(2, -5)
             MathLib.root(2, -353)
             MathLib.root(2, -31.7)
-            MathLib.root(4, 251.432)
 
 
 class LibTestModulo(unittest.TestCase):
